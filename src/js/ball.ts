@@ -48,6 +48,8 @@ export class Ball implements GameObject
         if (other == this.gameEngine.player1)
         {
             this.direction.x *= -1;
+            console.log("collision occured");
+            
         }
     }
 

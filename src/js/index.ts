@@ -29,7 +29,7 @@ export class GameEngine
     // array with all gameobjects in the game - If you want more objects in the game add them to this array!
     public objects:GameObject[] = new Array<GameObject>();
 
-    // kepp track of time between loops
+    // keep track of time between loops
     private date: Date = new Date();
     private timeZero: number = this.date.getTime();
     private timeNow: number;
@@ -46,7 +46,7 @@ export class GameEngine
         document.addEventListener('keyup', this.keyUp.bind(this));
         document.addEventListener('keydown', this.keyDown.bind(this));
 
-        //ceate gameobjects
+        //create gameobjects
         this.objects.push(new Framerate(new Vector(10,10)));
         
         this.player1 = new Player(new Vector(20,10), this);
@@ -107,9 +107,9 @@ export class GameEngine
         var time = this.timeNow-this.timeZero;
         this.timeZero=this.timeNow;
 
-        // run throght all objects
+        // run through all objects
         this.objects.forEach(element => {
-            //all objects are testeted for collisions on all objects
+            //all objects are tested for collisions on all objects
             this.objects.forEach(other => {  
                 if (element !== other)
                 {
@@ -127,7 +127,7 @@ export class GameEngine
             element.draw(this.ctx);
         });
         
-        // call the main gamelop again (~60fps by default)
+        // call the main gameloop again (~60fps by default)
         window.requestAnimationFrame(this.gameLoop.bind(this));
 
 

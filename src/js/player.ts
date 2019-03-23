@@ -9,7 +9,7 @@ export class Player implements GameObject
 
     private speed:number = 40;
     public height:number = 30;
-    public width:number =10;
+    public width:number = 10;
 
     constructor(position:Vector, gameEngine:GameEngine)
     {
@@ -21,7 +21,7 @@ export class Player implements GameObject
         if (this.gameEngine.aKey)
         {
             //move down
-            this.position.y += time/1000 * this.speed 
+            this.position.y += time/1000 * this.speed
         }
         if (this.gameEngine.qKey)
         {
